@@ -80,7 +80,7 @@
 // event listeners are what happens on the dom 
 // bootstrap is a css library allows us to piggyback off of html and css elements that are built in
 // documents is js running on a webpage has access to a global object call document
-// looking at two selctors -- 
+// looking at two selectors -- 
 
 
 
@@ -117,8 +117,46 @@
 // createGreeting('Dan', saysHelloToUser); // 'Hello Dan!'
 // createGreeeting('Dan', saysGoodbyeToUser); // 'Goodbye Dan!'
 
+// function wordsToSentence(words) {
+//   return `I love words ${words}!`; 
+
+// }
+
+// function wordsToSentenceTwo(words) {
+//   return `I hate words ${words}!`; 
+// }
+
+// function acceptsArguments(words, cb) {
+//  return cb(words);
+// }
+
+// console.log(acceptsArguments('Dan said', wordsToSentence));
+// console.log(acceptsArguments('Dan said', wordsToSentenceTwo)); // why did this log backwards?
 
 // event-listeners
+const button = document.querySelector('#otherbutton'); 
+const button2 = document.querySelector('#main-btn'); // targets element on dom
+const container = document.querySelector("#container");
+// button.addEventListener('click', () => {
+//   console.log('You clicked on me!');
+// });
 
+// button.addEventListener('click', (e) => { // or event
+//   console.log(`You clicked ${e.target.id}!`);
+  // console.log(e); // access value on event w dot notation or just e for event type
+// });
+
+const whatIsTheId = (e) => {
+  console.log(`You clicked ${e.target.id}!`);
+
+  if (e.target.id === 'main-btn') {
+    container.innerHTML = 'You clicked the MAIN BUTTON'; // innerHTML puts this in the div after the event 
+  } else {
+    container.innerHTML = 'You clicked the OTHER BUTTON'; // will replace text that is already in there once event occurs
+  }
+}
+
+button.addEventListener('click', whatIsTheId);
+button2.addEventListener('click', whatIsTheId);
 
 // methods on the DOM
