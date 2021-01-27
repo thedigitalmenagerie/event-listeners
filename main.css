@@ -1,7 +1,9 @@
 body {
-  background-color: antiquewhite;
+  background-color: beige;
 }
 
-.navbar-nav {
-  
+.img-container {
+  height: 200px;
+  background-size: cover;
+  background-position: center;
 }
