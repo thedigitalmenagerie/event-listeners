@@ -149,11 +149,23 @@ const getFormInfo = (e) => {
   document.querySelector('form').reset();
 }
 
+const deletePies = (e) => {
+  const targetType = e.target.type;
+  const targetId = e.target.id;
+
+  if (targetType === 'button') {
+    pies.splice(targetId, 1);
+  }
+  pieBuilder(pies);
+}
+
 const buttonEvents = () => {
   document.querySelector('#All').addEventListener('click', handleButtonClick);
   document.querySelector('#Doc').addEventListener('click', handleButtonClick);
   document.querySelector('#Aja').addEventListener('click', handleButtonClick);
   document.querySelector('#Trinity').addEventListener('click', handleButtonClick);
+  document.querySelector('#pies').addEventListener('click', deletePies);
+
   document.querySelector('form').addEventListener('submit', getFormInfo);
 }
 
